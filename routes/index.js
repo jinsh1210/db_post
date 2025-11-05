@@ -3,7 +3,7 @@ const router = express.Router();
 const db = require("../config/db");
 
 // 페이지당 게시물 수
-const POSTS_PER_PAGE = 10;
+const POSTS_PER_PAGE = 5;
 
 // 게시판 목록 (페이지네이션, 검색 포함)
 router.get("/", async (req, res) => {
@@ -44,7 +44,7 @@ router.get("/", async (req, res) => {
       currentPage: page,
       totalPages,
       search,
-      total
+      total,
     });
   } catch (err) {
     res.status(500).send(err.message);
